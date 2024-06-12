@@ -1,73 +1,309 @@
-body {
-    font-family: sans-serif;
-    text-align: center;
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-}
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .header {
+    background: linear-gradient(135deg, #3494e6, #ec6ead);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo{
+    max-width: 150px;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #f8c03d;
+  }
+  
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px;
+  }
+  
+  .product {
+    text-align: center;
+  }
 
-header {
-    background-color: #333;
+  .product img {
+    width: 95%;
+    height: auto;
+    margin-left: 25px;
+    margin-top: 0px;
+  }
+
+  .product-details {
+    display: block;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+  }
+
+  .color-selector {
+    display: inline-block;
+    text-align: center;
+    margin-top: 55px;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 8px;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  label {
+    margin-right: 20px;
+  }
+
+  input[type="radio"] {
+    margin-right: 5px;
+  }
+
+  input[type="radio"]:checked + label {
+    font-weight: bold;
+    color: #3498db;
+  }
+
+  .add-accessory {
+    align-items: center;
+    font-size: 18px;
+  }
+
+  .add-accessory input[type="checkbox"] {
+    transform: scale(1.5); 
+    margin-right: 10px;
+  }
+  
+  .price-toggles {
+    display: flex;
+    max-width: 85%;
+    margin-left: 8%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .price-toggle {
+    max-width: 300px;
+    height: 500px;
+    background-color: #f1f1f1a8;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    text-align: center;
+    position: relative;
+  }
+
+  .price-toggle:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  h2 {
+    font-size: 20px;
+    margin: 10px 0px;
+    color: #333;
+    font-weight: bold;
+  }
+
+  p {
+    color: #555;
+    font-size: 14px;
+    margin: 10px 0;
+    margin-top: 10px;
+  }
+
+  .price {
+    width: fit-content;
+    font-size: 28px;
+    color: #e44d26;
+    font-weight: bold;
+    padding: 15px;
+    margin: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  .price:hover{
+    background-color: #629fe477;
+  }
+
+  .select {
+    background-color: #03395e;
     color: #fff;
-    padding: 20px 0;
-}
+    padding: 16px;
+    width: 100%;
+    margin-left: -20px;
+    border: none;
+    font-size: 28px;
+    font-family: ui-monospace;
+    border-radius: 0px 0px 10px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    position: absolute;
+    bottom: 0px;
+  }
 
-.pricing-container {
+  .selected {
+    background-color: #02b3ca;
+  }
+  
+  .buttons {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-}
-
-.pricing-plan {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 30px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    width: 300px; /* Adjust as needed for responsive design */
-}
-
-.price {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.currency {
-    font-size: 16px;
-}
-
-.period {
-    font-size: 14px;
-}
-
-.features {
-    list-style: none;
-    padding: 0;
-}
-
-.features li {
-    margin-bottom: 10px;
-}
-
-.button {
-    background-color: #007bff;
+    margin-top: 20px;
+  }
+  
+  .buttons button {
+    padding: 15px 30px;
     color: #fff;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-}
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 25px 10px;
+    font-size: 24px;
+    border: 1px solid transparent;
+    background-color: #3494e6;
+  }
+  
+  .buttons button:hover {
+    background-color: #ffd166;
+    border-color: #c0c0c0;
+  }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    .pricing-container {
-        flex-direction: column; /* Stack plans vertically */
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 5px;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid #555;
+    color: #ccc;
+    font-size: 0.8em;
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      padding: 15px 10px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    nav ul {
+      margin-top: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    nav ul li {
+      margin-right: 10px;
+    }
+  
+    .product img {
+      width: 100%;
+      max-width: 300px;
+      margin-top: 10px;
+    }
+  
+    .product-details {
+      text-align: center;
+      margin-top: 20px;
+    }
+  
+    input[type="checkbox" i] {
+      margin-top: 35px;
+    }
+  
+    .buttons {
+      flex-direction: row;
+      align-items: center;
+      margin-top: 20px;
+    }
+  
+    .buttons button {
+      padding: 10px 18px;
+      font-size: 16px;
+      margin: 10px 10px;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .product {
+      display: flex;
+      align-items: center;
     }
 
-    .pricing-plan {
-        width: 100%; /* Take full width on smaller screens */
+    h1 {
+      display: block;
+      font-size: 2.5em;
+      font-weight: bold;
+  }
+  
+    .product img {
+      width: auto;
+      max-width: 40%;
+    }  
+    .price {
+      font-size: 36px;
+      cursor: pointer;
     }
-}
+
+
+    input[type="checkbox" i] {
+      background-color: initial;
+      cursor: default;
+      appearance: auto;
+      box-sizing: border-box;
+      margin: 40px 3px 3px 4px;
+      padding: initial;
+      border: initial;
+  }
+  }
+  
+  @media (min-width: 1150px) {
+    
+    h1 {
+      font-size: 3em;
+    }
+
+    .product img {
+      width: auto;
+      max-width: 40%;
+      padding: 10px;
+    }
+  
+    input[type="checkbox" i] {
+      margin: 50px 3px 3px 4px;
+  }
+  }
+  
